@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 import axios from "axios";
-import { Slider, Switch } from "antd";
+import { Slider } from "antd";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from "recharts";
 const Home = () => {
   const [finalData, setFinalData] = useState([]);
