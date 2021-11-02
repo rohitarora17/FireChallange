@@ -29,9 +29,9 @@ const Home = () => {
         <div className="Slider" style={{ width: "50%" }}>
           <Slider />
         </div>
-        <div className="TableChart"style={{
-          display:"flex",
-          padding:'1rem'
+        <div className="TableChart" style={{
+          display: "flex",
+          padding: '1rem'
         }}>
           <div className="lineChart" style={{ marginTop: "2rem", paddingBottom: '2rem' }}>
             <Chart />

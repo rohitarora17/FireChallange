@@ -9,7 +9,7 @@ const Chart = () => {
         <>
             {
                 eventState.isLoading ? <Loader />
-                :
+                    :
                     <LineChart
                         width={1000}
                         height={600}
