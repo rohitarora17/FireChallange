@@ -31,7 +31,8 @@ const Home = () => {
         </div>
         <div className="TableChart" style={{
           display: "flex",
-          padding: '1rem'
+          padding: '1rem',
+          flexDirection:'column'
         }}>
           <div className="lineChart" style={{ marginTop: "2rem", paddingBottom: '2rem' }}>
             <Chart />
@@ -40,7 +41,7 @@ const Home = () => {
             display: "flex",
             justifyContent: "flexStart",
             width: "65%",
-            marginLeft: "6rem"
+            marginLeft: "3rem"
           }}>
             <DataTable />
           </div>

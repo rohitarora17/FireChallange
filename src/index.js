@@ -4,8 +4,8 @@ import EventsState from './Context/Events/EventsState';
 import './index.css';
 import App from './App';
 ReactDOM.render(
-    <EventsState>
+  <EventsState>
     <App />
-    </EventsState>,
+  </EventsState>,
   document.getElementById('root')
 );

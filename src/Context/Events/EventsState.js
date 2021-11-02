@@ -27,6 +27,7 @@ const EventsState = ({ children }) => {
                     let parsedDate = moment(event.closed).format("MM/YYYY");
                     return {
                         date: parsedDate,
+                        title:event.title,
                         totallength: res.data.events.filter(
                             (duplicateDates) =>
                                 moment(duplicateDates.closed).format("MM/YYYY") === parsedDate

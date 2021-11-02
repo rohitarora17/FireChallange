@@ -6,6 +6,7 @@ const { Column } = Table;
 
 const DataTable = () => {
     const [eventState] = useContext(EventsContext);
+    console.log()
     return (
         <>
             {
@@ -14,7 +15,8 @@ const DataTable = () => {
                     <div className="TableContainer" style={{
                         display: 'flex',
                         justifyContent: 'flexStart',
-                        flexDirection: 'column'
+                        flexDirection: 'column',
+                        paddingBottom:'1REM'
                     }}>
                         <h1 style={{
                             fontWeight: "lighter",
@@ -22,8 +24,12 @@ const DataTable = () => {
                         }}>
                             Data Table :
                         </h1>
-                        <Table dataSource={eventState.data}>
+                        <Table
+                            dataSource={eventState.data}
+                            pagination={eventState.data.length <= 5 ? false : { defaultPageSize: 5 }}
+                        >
                             <Column title="Month/Year" dataIndex="date" key="date" />
+                            <Column title="Titles" dataIndex="title" key="title" />
                             <Column title="No. of WildFires" dataIndex="totallength" key="totallength" />
                         </Table>
                     </div>
