@@ -14,7 +14,7 @@ const initialState = {
 const EventsState = ({ children }) => {
     const [eventState, dispatch] = useReducer(Reducer, initialState);
     const getData = async () => {
-        dispatch({type:'SET_LOADING',payload:true})
+        dispatch({ type: 'SET_LOADING', payload: true })
         axios
             .get(
                 `https://eonet.sci.gsfc.nasa.gov/api/v3/events?status=closed&category=wildfires&limit=1000&start=${eventState.startDate}&end=${eventState.currentDate}`
@@ -35,7 +35,7 @@ const EventsState = ({ children }) => {
                     (el, i) => allevents.findIndex((sub) => sub.date === el.date) === i
                 )
                 dispatch({ type: 'SET_DATA', payload: finalData })
-                dispatch({type:'SET_LOADING',payload:false})
+                dispatch({ type: 'SET_LOADING', payload: false })
             });
     };
     useEffect(() => {
