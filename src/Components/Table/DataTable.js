@@ -9,24 +9,24 @@ const DataTable = () => {
     return (
         <>
             {
-            eventState.isLoading ? <Loader />
-            :
-            <div className="TableContainer" style={{
-                display: 'flex',
-                justifyContent: 'flexStart',
-                flexDirection: 'column'
-            }}>
-                <h1 style={{
-                    fontWeight: "lighter",
-                    fontSize: "revert"
-                }}>
-                    Data Table :
-                </h1>
-                <Table dataSource={eventState.data}>
-                    <Column title="Month/Year" dataIndex="date" key="date" />
-                    <Column title="No. of WildFires" dataIndex="totallength" key="totallength" />
-                </Table>
-            </div>
+                eventState.isLoading ? <Loader />
+                    :
+                    <div className="TableContainer" style={{
+                        display: 'flex',
+                        justifyContent: 'flexStart',
+                        flexDirection: 'column'
+                    }}>
+                        <h1 style={{
+                            fontWeight: "lighter",
+                            fontSize: "revert"
+                        }}>
+                            Data Table :
+                        </h1>
+                        <Table dataSource={eventState.data}>
+                            <Column title="Month/Year" dataIndex="date" key="date" />
+                            <Column title="No. of WildFires" dataIndex="totallength" key="totallength" />
+                        </Table>
+                    </div>
             }
         </>
     )
