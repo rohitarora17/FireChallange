@@ -20,7 +20,10 @@ const EventsState = ({ children }) => {
                 `https://eonet.sci.gsfc.nasa.gov/api/v3/events?status=closed&category=wildfires&limit=1000&start=${eventState.startDate}&end=${eventState.currentDate}`
             )
             .then((res) => {
-                let allevents = res.data.events.map((event) => {
+                let sorted = res.data.events.sort(function (a, b) {
+                    return moment(a.closed).diff(moment(b.closed))
+                })
+                let allevents = sorted.map((event) => {
                     let parsedDate = moment(event.closed).format("MM/YYYY");
                     return {
                         date: parsedDate,
