@@ -5,7 +5,6 @@ import Loader from '../Loader/Loader';
 
 const Chart = () => {
     const [eventState] = useContext(EventsContext);
-    console.log(eventState)
     return (
         <>
             {

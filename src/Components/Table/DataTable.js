@@ -16,7 +16,7 @@ const DataTable = () => {
                         display: 'flex',
                         justifyContent: 'flexStart',
                         flexDirection: 'column',
-                        paddingBottom:'1REM'
+                        paddingBottom:'1rem'
                     }}>
                         <h1 style={{
                             fontWeight: "lighter",
