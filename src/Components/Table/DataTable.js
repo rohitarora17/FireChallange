@@ -5,7 +5,6 @@ import { Table } from 'antd';
 
 const DataTable = () => {
     const [eventState] = useContext(EventsContext);
-    console.log(eventState)
     return (
         <>
             {
