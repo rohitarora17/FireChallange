@@ -10,6 +10,9 @@ const RangeSlider = () => {
         dispatch({ type: 'SET_START_DATE', payload: StartDate })
     };
 
+    function formatter(value) {
+        return `${value} months`;
+    }
     return (
         <div className="sliderContainer" >
             <Slider
@@ -18,6 +21,7 @@ const RangeSlider = () => {
                 onAfterChange={max => setValues(max)}
                 defaultValue={12}
                 disabled={false}
+                tipFormatter={formatter}
             />
         </div>
     )

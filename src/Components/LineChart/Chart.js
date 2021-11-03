@@ -14,7 +14,7 @@ const LineChart = () => {
         eventState.isLoading ? <Loader />
           :
           <Chart
-            width={'600px'}
+            width={'1200px'}
             height={'400px'}
             chartType="LineChart"
             loader={<div>Loading Chart</div>}
