@@ -11,7 +11,6 @@ const RangeSlider = () => {
     };
     const marks = {
         2: 'Start',
-        24: 'Stop',
       };
 
     function formatter(value) {
