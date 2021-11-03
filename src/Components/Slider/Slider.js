@@ -14,6 +14,9 @@ const RangeSlider = () => {
         24: 'Stop',
       };
 
+    function formatter(value) {
+        return `${value} months`;
+    }
     return (
         <div className="sliderContainer" >
             <Slider
@@ -23,6 +26,7 @@ const RangeSlider = () => {
                 onAfterChange={max => setValues(max)}
                 defaultValue={12}
                 disabled={false}
+                tipFormatter={formatter}
             />
         </div>
     )

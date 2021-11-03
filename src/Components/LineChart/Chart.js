@@ -20,6 +20,8 @@ const LineChart = () => {
           :
           <Chart
             className='LineChart'
+            width={'1200px'}
+            height={'400px'}
             chartType="LineChart"
             loader={<div>Loading Chart</div>}
             data={GraphData}
