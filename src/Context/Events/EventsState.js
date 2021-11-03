@@ -8,7 +8,8 @@ const initialState = {
     startDate: moment().subtract(12, "month").format("YYYY-MM-DD"),
     currentDate: moment().format("YYYY-MM-DD"),
     isLoading: false,
-    data: [],
+    chartData: [],
+    tableData: []
 };
 
 const EventsState = ({ children }) => {
@@ -20,14 +21,13 @@ const EventsState = ({ children }) => {
                 `https://eonet.sci.gsfc.nasa.gov/api/v3/events?status=closed&category=wildfires&limit=1000&start=${eventState.startDate}&end=${eventState.currentDate}`
             )
             .then((res) => {
-                let sorted = res.data.events.sort(function (a, b) {
+                let sortedData = res.data.events.sort(function (a, b) {
                     return moment(a.closed).diff(moment(b.closed))
                 })
-                let allevents = sorted.map((event) => {
+                let allevents = sortedData.map((event) => {
                     let parsedDate = moment(event.closed).format("MM/YYYY");
                     return {
                         date: parsedDate,
-                        title:event.title,
                         totallength: res.data.events.filter(
                             (duplicateDates) =>
                                 moment(duplicateDates.closed).format("MM/YYYY") === parsedDate
@@ -35,10 +35,20 @@ const EventsState = ({ children }) => {
                     };
                 });
 
-                let finalData = allevents.filter(
+                let finalChartData = allevents.filter(
                     (el, i) => allevents.findIndex((sub) => sub.date === el.date) === i
                 )
-                dispatch({ type: 'SET_DATA', payload: finalData })
+                let tableData = sortedData.map((event) => {
+                    return {
+                        id: event.id,
+                        startdate: moment(event.geometry[0]).format("MM/DD/YYYY"),
+                        closeddate: moment(event.closed).format("MM/DD/YYYY"),
+                        title: event.title,
+                        inciweb: event.sources[0].url,
+                    }
+                });
+                dispatch({ type: 'SET_CHART_DATA', payload: finalChartData })
+                dispatch({ type: 'SET_TABLE_DATA', payload: tableData })
                 dispatch({ type: 'SET_LOADING', payload: false })
             });
     };

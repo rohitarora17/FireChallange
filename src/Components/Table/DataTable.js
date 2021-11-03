@@ -2,11 +2,10 @@ import React, { useContext } from 'react'
 import EventsContext from '../../Context/Events/eventsContext';
 import Loader from '../Loader/Loader'
 import { Table } from 'antd';
-const { Column } = Table;
 
 const DataTable = () => {
     const [eventState] = useContext(EventsContext);
-    console.log()
+    console.log(eventState)
     return (
         <>
             {
@@ -18,20 +17,25 @@ const DataTable = () => {
                         flexDirection: 'column',
                         paddingBottom:'1rem'
                     }}>
-                        <h1 style={{
-                            fontWeight: "lighter",
-                            fontSize: "revert"
-                        }}>
-                            Data Table :
+                        <h1 className="table-heading">
+                            Wildfires Data:
                         </h1>
                         <Table
-                            dataSource={eventState.data}
-                            pagination={eventState.data.length <= 5 ? false : { defaultPageSize: 5 }}
-                        >
-                            <Column title="Month/Year" dataIndex="date" key="date" />
-                            <Column title="Titles" dataIndex="title" key="title" />
-                            <Column title="No. of WildFires" dataIndex="totallength" key="totallength" />
-                        </Table>
+                            dataSource={eventState.tableData}
+                            pagination={eventState.tableData.length <= 5 ? false : { defaultPageSize: 5 }}
+                            columns = {[{
+                                title: "ID", dataIndex: "id", key: "id"
+                            },
+                            {
+                                title: "Start Date", dataIndex: "startdate", key: "startdate"
+                            },{
+                                title: "Closed Date", dataIndex: "closeddate", key: "closeddate"
+                            },{
+                                title: "Title", dataIndex: "title", key: "title"
+                            },{
+                                title: "Source Info", dataIndex: "inciweb", key: "inciweb", render: text => <a target='_blank' href={text}>View</a>,
+                            },]}
+                        />;
                     </div>
             }
         </>

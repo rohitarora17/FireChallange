@@ -5,10 +5,15 @@ const Reducer = (state, action) => {
                 ...state,
                 startDate: `${action.payload}`,
             };
-        case 'SET_DATA':
+        case 'SET_CHART_DATA':
             return {
                 ...state,
-                data: action.payload
+                chartData: action.payload
+            };
+        case 'SET_TABLE_DATA':
+            return {
+                ...state,
+                tableData: action.payload
             };
         case 'SET_LOADING':
             return {
