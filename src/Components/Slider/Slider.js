@@ -9,12 +9,17 @@ const RangeSlider = () => {
         let StartDate = moment().subtract(max, "month").format("YYYY-MM-DD");
         dispatch({ type: 'SET_START_DATE', payload: StartDate })
     };
+    const marks = {
+        2: 'Start',
+        24: 'Stop',
+      };
 
     return (
         <div className="sliderContainer" >
             <Slider
                 min={2}
                 max={24}
+                marks={marks}
                 onAfterChange={max => setValues(max)}
                 defaultValue={12}
                 disabled={false}

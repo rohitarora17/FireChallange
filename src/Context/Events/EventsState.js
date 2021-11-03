@@ -41,7 +41,7 @@ const EventsState = ({ children }) => {
                 let tableData = sortedData.map((event) => {
                     return {
                         id: event.id,
-                        startdate: moment(event.geometry[0]).format("MM/DD/YYYY"),
+                        startdate: moment(event.geometry[0].date).format("MM/DD/YYYY"),
                         closeddate: moment(event.closed).format("MM/DD/YYYY"),
                         title: event.title,
                         inciweb: event.sources[0].url,

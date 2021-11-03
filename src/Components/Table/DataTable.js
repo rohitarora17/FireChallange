@@ -5,6 +5,7 @@ import { Table } from 'antd';
 import './DataTableStyles.css'
 const DataTable = () => {
     const [eventState] = useContext(EventsContext);
+    const pageSizes = [5, 10, 20, 50]
     return (
         <>
             {
@@ -16,7 +17,7 @@ const DataTable = () => {
                         </h1>
                         <Table
                             dataSource={eventState.tableData}
-                            pagination={eventState.tableData.length <= 5 ? false : { defaultPageSize: 5, showSizeChanger: false }}
+                            pagination={eventState.tableData.length <= 5 ? false : { defaultPageSize: 5, showSizeChanger: true, pageSizeOptions:pageSizes }}
                             columns={[{
                                 title: "ID", dataIndex: "id", key: "id"
                             },
