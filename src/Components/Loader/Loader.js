@@ -1,11 +1,11 @@
 import React from 'react'
 import { Spin, Space } from 'antd';
-import { loader } from './LoaderStyles.js'
+import './LoaderStyles.css'
 
 const Loader = () => {
 
     return (
-        <div className="loaderContainer" style={loader.loaderContainer}>
+        <div className="loaderContainer">
             <Space size="middle">
                 <Spin size="large" />
             </Space>

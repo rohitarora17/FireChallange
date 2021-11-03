@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+.DataDetails {
+    margin: 2rem
+}
+.headingMain {
+    font-weight: lighter;
+    font-size: revert;
+}
+.Slider {
+    width: 50%
+}
+
+

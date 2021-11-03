@@ -1,0 +1,6 @@
+.TableContainer{
+    display: flex;
+    justify-content: flexStart;
+    flex-direction: column;
+    padding-bottom:1rem;
+}

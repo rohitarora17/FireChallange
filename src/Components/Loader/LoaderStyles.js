@@ -1,8 +1,0 @@
-export const loader = {
-    loaderContainer : {
-        display: 'flex',
-        position: 'absolute',
-        top: '50%',
-        left: '50%'
-    }
-}

@@ -3,18 +3,18 @@ import Slider from '../../Components/Slider/Slider'
 import LineChart from "../../Components/LineChart/Chart";
 import EventsContext from '../../Context/Events/eventsContext';
 import DataTable from '../../Components/Table/DataTable';
-import { HomeStyles } from './HomeStyles.js'
+import './HomeStyles.css'
 const Home = () => {
   const [eventState] = useContext(EventsContext);
   return (
     <>
-      <div className="container" style={HomeStyles.container}>
-        <div className="DataDetails" style={HomeStyles.DataDetails}>
-          <h1 className='headingMain' style={HomeStyles.headingMain}>
+      <div className="container" >
+        <div className="DataDetails">
+          <h1 className='headingMain'>
             {`Data is from ${eventState.startDate} to ${eventState.currentDate}`}
           </h1>
         </div>
-        <div className="Slider" style={HomeStyles.Slider}>
+        <div className="Slider" >
           <Slider />
         </div>
         <div className="lineChart">

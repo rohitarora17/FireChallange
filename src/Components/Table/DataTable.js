@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import EventsContext from '../../Context/Events/eventsContext';
 import Loader from '../Loader/Loader'
 import { Table } from 'antd';
-import { DataTableStyles } from './DataTableStyles.js'
+import './DataTableStyles.css'
 const DataTable = () => {
     const [eventState] = useContext(EventsContext);
     return (
@@ -10,7 +10,7 @@ const DataTable = () => {
             {
                 eventState.isLoading ? <Loader />
                     :
-                    <div className="TableContainer" style={DataTableStyles.TableContainer}>
+                    <div className="TableContainer">
                         <h1 className="table-heading">
                             Wildfires Data:
                         </h1>
